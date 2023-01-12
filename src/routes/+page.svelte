@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte'
 	import { blur } from 'svelte/transition'
 	import { tweened } from 'svelte/motion'
+	import Select from '../components/Select.svelte';
 	/*
 		Types
 	*/
@@ -24,6 +25,7 @@
 	let letterEl: HTMLSpanElement
 	let inputEl: HTMLInputElement
 	let caretEl: HTMLDivElement
+	let selectedLanguage: string = 'en'
 	/*
 		Listen for key press
 	*/
@@ -230,6 +232,15 @@
 					/>
 				</svg>
 			</button>
+		</div>
+		<div class="language-select">
+			<Select options={[
+				{ language: "en", text: "English"},
+				{ language: "es", text: "Spanish"},
+			]} 
+				display_func={obj => obj.text}
+				bind:value={selectedLanguage}
+			/>
 		</div>
 	</div>
 {/if}
