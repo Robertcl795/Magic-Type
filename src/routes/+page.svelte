@@ -196,6 +196,7 @@
 			on:keydown={handleKeydown}
 			class="input"
 			type="text"
+			title="game text input"
 		/>
 
 		<div class="time">{seconds}</div>
@@ -235,11 +236,14 @@
 		</div>
 		<div class="language-select">
 			<Select options={[
-				{ language: "en", text: "English"},
-				{ language: "es", text: "Spanish"},
-			]} 
+					{ language: "en", text: "English"},
+					{ language: "es", text: "Spanish"},
+				]} 
+				id="language-select"
+				labelText="Language"
 				display_func={obj => obj.text}
 				bind:value={selectedLanguage}
+				title="language select"
 			/>
 		</div>
 	</div>
